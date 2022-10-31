@@ -10,3 +10,4 @@ rootProject.name = "AndroidDemos"
 include ':app'
 include ':fragment_java'
 include ':java_test_lib'
+include ':fragment_kotlin'
