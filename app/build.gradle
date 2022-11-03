@@ -2,15 +2,17 @@ plugins {
     id 'com.android.application'
 }
 
+def cfg = rootProject.ext.android // 引入工程配置
+def libs = rootProject.ext.dependencies
 android {
-    compileSdk 32
+    compileSdk cfg.compileSdk
 
     defaultConfig {
         applicationId "com.xiongtao.androiddemos"
-        minSdk 23
-        targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        minSdk cfg.minSdk
+        targetSdk cfg.targetSdk
+        versionCode cfg.versionCode
+        versionName cfg.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -29,10 +31,11 @@ android {
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.3.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation libs["appcompat"]
+    implementation libs["material"]
+    implementation libs["constraintlayout"]
+    testImplementation libs["junit"]
+    androidTestImplementation libs["xjunit"]
+    androidTestImplementation libs["espresso-core"]
+
 }

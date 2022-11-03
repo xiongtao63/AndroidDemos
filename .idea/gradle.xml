@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
@@ -14,6 +15,8 @@
             <option value="$PROJECT_DIR$/fragment_java" />
             <option value="$PROJECT_DIR$/fragment_kotlin" />
             <option value="$PROJECT_DIR$/java_test_lib" />
+            <option value="$PROJECT_DIR$/retrofit_java" />
+            <option value="$PROJECT_DIR$/retrofitwanandroiddemo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
