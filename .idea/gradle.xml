@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/fragment_kotlin" />
             <option value="$PROJECT_DIR$/java_test_lib" />
             <option value="$PROJECT_DIR$/retrofit_java" />
+            <option value="$PROJECT_DIR$/retrofit_mvp_kotlin" />
             <option value="$PROJECT_DIR$/retrofitwanandroiddemo" />
           </set>
         </option>

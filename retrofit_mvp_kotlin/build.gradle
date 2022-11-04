@@ -1,0 +1,61 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+}
+def cfg = rootProject.ext.android // 引入工程配置
+def libs = rootProject.ext.dependencies
+android {
+    compileSdk cfg.compileSdk
+
+    defaultConfig {
+        applicationId "com.xiongtao.retrofit_mvp_kotlin"
+        minSdk cfg.minSdk
+        targetSdk cfg.targetSdk
+        versionCode cfg.versionCode
+        versionName cfg.versionName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    testImplementation libs["junit"]
+    implementation libs["kotlin-stdlib-jdk7"]
+    implementation libs["appcompat"]
+    implementation libs["core-ktx"]
+    implementation libs["constraintlayout"]
+
+    implementation libs["retrofit"]
+    implementation libs["retrofit-mock"]
+    implementation libs["converter-gson"]
+    implementation libs["logging-interceptor"]
+    implementation libs["converter-scalars"]
+    implementation libs["adapter-rxjava2"]
+    implementation libs["gson"]
+    implementation libs["rxjava"]
+    implementation libs["rxandroid"]
+    implementation libs["rxlifecycle"]
+    implementation libs["rxlifecycle-android"]
+    implementation libs["rxlifecycle-components"]
+    implementation libs["rxlifecycle-kotlin"]
+    implementation libs["lifecycle-extensions"]
+    androidTestImplementation libs["xjunit"]
+    androidTestImplementation libs["espresso-core"]
+}
