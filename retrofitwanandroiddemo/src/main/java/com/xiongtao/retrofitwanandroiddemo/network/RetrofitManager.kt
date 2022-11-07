@@ -1,6 +1,8 @@
 package com.xiongtao.retrofitwanandroiddemo.network
 
 import android.util.Log
+import com.xiongtao.retrofitwanandroiddemo.calladapter.LiveDataCallAdapterFactory
+import com.xiongtao.retrofitwanandroiddemo.converter.MyGsonConvertFactory
 import io.reactivex.android.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -46,8 +48,10 @@ class RetrofitManager private constructor(){
         }.build()
         return Retrofit.Builder()
             .baseUrl(baseUrl)
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .addConverterFactory(GsonConverterFactory.create())
+//            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+//            .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(LiveDataCallAdapterFactory.create())
+            .addConverterFactory(MyGsonConvertFactory.create())
             .client(okHttpClient)
             .build()
     }
