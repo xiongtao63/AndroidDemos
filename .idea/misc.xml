@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/androidproject/AndroidDemos/andfixdemo/src/main/res/layout/activity_main.xml" value="0.20364583333333333" />
         <entry key="..\:/androidproject/AndroidDemos/fragment_kotlin/src/main/res/layout/activity_basic.xml" value="0.1" />
         <entry key="..\:/androidproject/AndroidDemos/fragment_kotlin/src/main/res/layout/activity_bitmap.xml" value="0.20364583333333333" />
         <entry key="..\:/androidproject/AndroidDemos/fragment_kotlin/src/main/res/layout/activity_dynamic_basic.xml" value="0.25" />
@@ -17,6 +18,7 @@
         <entry key="..\:/androidproject/AndroidDemos/retrofit_mvp_kotlin/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/androidproject/AndroidDemos/retrofit_mvp_kotlin/src/main/res/layout/dialog_loading.xml" value="0.1" />
         <entry key="..\:/androidproject/AndroidDemos/retrofitwanandroiddemo/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/androidproject/AndroidDemos/tinkerdemo/src/main/res/layout/activity_main.xml" value="0.1890625" />
       </map>
     </option>
   </component>

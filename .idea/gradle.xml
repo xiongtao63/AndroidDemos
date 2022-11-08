@@ -7,10 +7,11 @@
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="corretto-11" />
+        <option name="gradleJvm" value="Embedded JDK" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/andfixdemo" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/fragment_java" />
             <option value="$PROJECT_DIR$/fragment_kotlin" />
@@ -18,6 +19,7 @@
             <option value="$PROJECT_DIR$/retrofit_java" />
             <option value="$PROJECT_DIR$/retrofit_mvp_kotlin" />
             <option value="$PROJECT_DIR$/retrofitwanandroiddemo" />
+            <option value="$PROJECT_DIR$/tinkerdemo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

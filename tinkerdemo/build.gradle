@@ -1,0 +1,111 @@
+apply plugin :'com.android.application'
+apply plugin: 'com.tencent.tinker.patch'
+
+def cfg = rootProject.ext.android // 引入工程配置
+def libs = rootProject.ext.dependencies
+android {
+    compileSdk cfg.compileSdk
+
+    defaultConfig {
+        applicationId "com.xiongtao.tinkerdemo"
+        minSdk cfg.minSdk
+        targetSdk cfg.targetSdk
+        versionCode cfg.versionCode
+        versionName cfg.versionName
+        multiDexEnabled true
+        multiDexKeepProguard file("tinker_multidexkeep.pro")
+        buildConfigField "String", "MESSAGE", "\"I am the base apk\""
+//        buildConfigField "String", "MESSAGE", "\"I am the patch apk\""
+        /**
+         * client version would update with patch
+         * so we can get the newly git version easily!
+         */
+        buildConfigField "String", "TINKER_ID", "\"${TINKER_ID}\""
+        buildConfigField "String", "PLATFORM",  "\"all\""
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    // tinker支持大工程文件配置
+    dexOptions {
+        jumboMode = true
+    }
+    //配置自己的签名文件，签名文件的生成和导入可以去百度，本篇不讲解
+    signingConfigs {
+        release {
+            try {
+                keyAlias 'android.keystore'
+                keyPassword '123456'
+                storeFile file('E://android.keystore')
+                storePassword '123456'
+            } catch (ex) {
+                throw new InvalidUserDataException(ex.toString())
+            }
+
+        }
+        debug {
+            storeFile file('E://android.keystore')
+            keyAlias 'android.keystore'
+            keyPassword '123456'
+            storePassword '123456'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+
+
+    implementation libs["appcompat"]
+    testImplementation libs["junit"]
+    androidTestImplementation libs["runner"]
+    androidTestImplementation libs["espresso-core"]
+    implementation libs["constraintlayout"]
+//    //optional, help to generate the final application
+//    compileOnly libs["tinker-android-anno"] //只在编译时用，不打包到apk；
+//    //tinker's main Android lib
+//    implementation libs["tinker-android-lib"]
+    implementation libs["multidex"]
+//    //若使用annotation需要单独引用,对于tinker的其他库都无需再引用
+//    annotationProcessor("com.tinkerpatch.tinker:tinker-android-anno:${TINKER_VERSION}") { changing = true }
+//    compileOnly("com.tinkerpatch.tinker:tinker-android-anno:${TINKER_VERSION}") { changing = true }
+//    implementation("com.tinkerpatch.sdk:tinkerpatch-android-sdk:${TINKERPATCH_VERSION}") { changing = true }
+
+//    //可选，用于生成application类
+//    implementation("com.tencent.tinker:tinker-android-lib:${TINKER_VERSION}") { changing = true }
+//    //tinker的核心库
+//    compileOnly("com.tencent.tinker:tinker-android-anno:${TINKER_VERSION}") { changing = true }
+
+    //可选，用于生成application类
+    annotationProcessor('com.tencent.tinker:tinker-android-anno:1.9.14.19')
+    compileOnly('com.tencent.tinker:tinker-android-anno:1.9.14.19')
+    //tinker的核心库
+    implementation('com.tencent.tinker:tinker-android-lib:1.9.14.19')
+
+}
+
+// 引入tinker配置
+apply from: "tinkerpatch.gradle"

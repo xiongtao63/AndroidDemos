@@ -1,0 +1,39 @@
+plugins {
+    id 'com.android.application'
+}
+def cfg = rootProject.ext.android // 引入工程配置
+def libs = rootProject.ext.dependencies
+android {
+    compileSdk cfg.compileSdk
+
+    defaultConfig {
+        applicationId "com.xiongtao.andfixdemo"
+        minSdk cfg.minSdk
+        targetSdk cfg.targetSdk
+        versionCode cfg.versionCode
+        versionName cfg.versionName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation libs["appcompat"]
+    testImplementation libs["junit"]
+    androidTestImplementation libs["runner"]
+    androidTestImplementation libs["espresso-core"]
+    implementation libs["constraintlayout"]
+    implementation libs["andfix"]
+}

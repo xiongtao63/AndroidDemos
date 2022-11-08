@@ -15,3 +15,5 @@ include ':retrofitwanandroiddemo'
 include ':retrofit_java'
 
 include ':retrofit_mvp_kotlin'
+include ':andfixdemo'
+include ':tinkerdemo'
