@@ -4,8 +4,13 @@
     <bytecodeTargetLevel target="1.7">
       <module name="AndroidDemos.andfixdemo" target="11" />
       <module name="AndroidDemos.app" target="11" />
+      <module name="AndroidDemos.buildSrc" target="11" />
+      <module name="AndroidDemos.customplugin" target="11" />
       <module name="AndroidDemos.fragment_java" target="11" />
       <module name="AndroidDemos.fragment_kotlin" target="11" />
+      <module name="AndroidDemos.hotfix_java" target="11" />
+      <module name="AndroidDemos.hotlib" target="11" />
+      <module name="AndroidDemos.plugindemo" target="11" />
       <module name="AndroidDemos.retrofit_java" target="11" />
       <module name="AndroidDemos.retrofit_mvp" target="11" />
       <module name="AndroidDemos.retrofit_mvp_kotlin" target="11" />

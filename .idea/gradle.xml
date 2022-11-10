@@ -13,9 +13,15 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/andfixdemo" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/buildSrc" />
+            <option value="$PROJECT_DIR$/customplugin" />
             <option value="$PROJECT_DIR$/fragment_java" />
             <option value="$PROJECT_DIR$/fragment_kotlin" />
+            <option value="$PROJECT_DIR$/hack" />
+            <option value="$PROJECT_DIR$/hotfix_java" />
+            <option value="$PROJECT_DIR$/hotlib" />
             <option value="$PROJECT_DIR$/java_test_lib" />
+            <option value="$PROJECT_DIR$/plugindemo" />
             <option value="$PROJECT_DIR$/retrofit_java" />
             <option value="$PROJECT_DIR$/retrofit_mvp_kotlin" />
             <option value="$PROJECT_DIR$/retrofitwanandroiddemo" />

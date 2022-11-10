@@ -1,5 +1,5 @@
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
     repositories {
         google()
         mavenCentral()
@@ -17,3 +17,9 @@ include ':retrofit_java'
 include ':retrofit_mvp_kotlin'
 include ':andfixdemo'
 include ':tinkerdemo'
+include ':plugindemo'
+include ':customplugin'
+
+include ':hack'
+include ':hotlib'
+include ':hotfix_java'

@@ -1,0 +1,55 @@
+plugins {
+    id 'com.android.application'
+    id 'com.xiongtao.plugins'
+}
+//apply plugin: MyPlugin2
+def cfg = rootProject.ext.android // 引入工程配置
+def libs = rootProject.ext.dependencies
+android {
+    compileSdk cfg.compileSdk
+
+    defaultConfig {
+        applicationId "com.xiongtao.plugindemo"
+        minSdk cfg.minSdk
+        targetSdk cfg.targetSdk
+        versionCode cfg.versionCode
+        versionName cfg.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+apply plugin: PluginDemo // 引入插件
+// 定义插件
+class PluginDemo implements Plugin<Project> {
+
+    @Override
+    void apply(Project project) {
+            println '第一种方式实现插件'
+    }
+}
+
+
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation libs["appcompat"]
+    implementation libs["material"]
+    implementation libs["constraintlayout"]
+    implementation files('libs\\gradle-7.1.2-sources.jar')
+    testImplementation libs["junit"]
+    androidTestImplementation libs["xjunit"]
+    androidTestImplementation libs["espresso-core"]
+}
