@@ -3,18 +3,17 @@ plugins {
 }
 def cfg = rootProject.ext.android // 引入工程配置
 def libs = rootProject.ext.dependencies
-
 android {
     compileSdk cfg.compileSdk
 
     defaultConfig {
-        applicationId "com.xiongtao.andfixdemo"
+        applicationId "com.xiongtao.asmdemo"
         minSdk cfg.minSdk
         targetSdk cfg.targetSdk
         versionCode cfg.versionCode
         versionName cfg.versionName
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -32,9 +31,14 @@ android {
 dependencies {
 
     implementation libs["appcompat"]
+    testImplementation libs["material"]
     testImplementation libs["junit"]
+    androidTestImplementation libs["xjunit"]
     androidTestImplementation libs["runner"]
     androidTestImplementation libs["espresso-core"]
     implementation libs["constraintlayout"]
-    implementation libs["andfix"]
+
+    testImplementation libs["asm"]
+    testImplementation libs["asm-commons"]
+
 }

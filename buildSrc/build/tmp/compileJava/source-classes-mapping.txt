@@ -1,5 +1,7 @@
 com/xiongtao/plugin/PatchExtension.java
  com.xiongtao.plugin.PatchExtension
+com/xiongtao/asmplugin/APMPlugin.java
+ com.xiongtao.asmplugin.APMPlugin
 com/xiongtao/plugin/ClassUtils.java
  com.xiongtao.plugin.ClassUtils
  com.xiongtao.plugin.ClassUtils$1

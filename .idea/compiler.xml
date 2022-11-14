@@ -4,6 +4,7 @@
     <bytecodeTargetLevel target="1.7">
       <module name="AndroidDemos.andfixdemo" target="11" />
       <module name="AndroidDemos.app" target="11" />
+      <module name="AndroidDemos.asmdemo" target="11" />
       <module name="AndroidDemos.buildSrc" target="11" />
       <module name="AndroidDemos.customplugin" target="11" />
       <module name="AndroidDemos.fragment_java" target="11" />
