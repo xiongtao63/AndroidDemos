@@ -11,6 +11,7 @@
       <module name="AndroidDemos.fragment_kotlin" target="11" />
       <module name="AndroidDemos.hotfix_java" target="11" />
       <module name="AndroidDemos.hotlib" target="11" />
+      <module name="AndroidDemos.plugin_apk_demo" target="11" />
       <module name="AndroidDemos.plugindemo" target="11" />
       <module name="AndroidDemos.retrofit_java" target="11" />
       <module name="AndroidDemos.retrofit_mvp" target="11" />
