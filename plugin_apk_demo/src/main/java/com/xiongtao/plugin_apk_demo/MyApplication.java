@@ -10,6 +10,8 @@ public class MyApplication extends Application {
         super.onCreate();
 
         LoadUtil.loadClass(this);
+        HookUtil.hookAMS();
+        HookUtil.hookHandler();
 
     }
 }

@@ -3,6 +3,8 @@ package com.xiongtao.plugin_apk_demo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.ComponentName;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -41,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+
+                Intent intent = new Intent();
+                intent.setComponent(new ComponentName("com.xiongtao.androiddemos",
+                        "com.xiongtao.androiddemos.MainActivity"));
+                startActivity(intent);
 
             }
         });
