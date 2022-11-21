@@ -1,9 +1,12 @@
 package com.xiongtao.plugin_apk_demo;
 
 import android.content.Context;
+import android.content.res.AssetManager;
+import android.content.res.Resources;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 import dalvik.system.DexClassLoader;
 import dalvik.system.PathClassLoader;
@@ -60,5 +63,19 @@ public class LoadUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static Resources loadResources(Context context){
+        try {
+            AssetManager assetManager = AssetManager.class.newInstance();
+            Method addAssetPathMethod  = assetManager.getClass().getDeclaredMethod("addAssetPath", String.class);
+            addAssetPathMethod.setAccessible(true);
+            addAssetPathMethod.invoke(assetManager,context.getCacheDir().getPath()+"/app-debug.apk");
+            Resources resources = context.getResources();
+            return new Resources(assetManager,resources.getDisplayMetrics(),resources.getConfiguration());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
