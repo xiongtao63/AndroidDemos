@@ -1,14 +1,14 @@
 plugins {
     id 'com.android.application'
+    id 'kotlin-android'
 }
-
 def cfg = rootProject.ext.android // 引入工程配置
 def libs = rootProject.ext.dependencies
 android {
     compileSdk cfg.compileSdk
 
     defaultConfig {
-        applicationId "com.xiongtao.androiddemos"
+        applicationId "com.xiongtao.iocdemo"
         minSdk cfg.minSdk
         targetSdk cfg.targetSdk
         versionCode cfg.versionCode
@@ -27,16 +27,20 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
 
 dependencies {
 
+
+    implementation libs["core-ktx"]
     implementation libs["appcompat"]
     implementation libs["material"]
-    implementation libs["constraintlayout"]
-    implementation libs["glide"]
     testImplementation libs["junit"]
-    androidTestImplementation libs["xjunit"]
+    testImplementation libs["xjunit"]
+    androidTestImplementation libs["runner"]
     androidTestImplementation libs["espresso-core"]
-
+    implementation libs["constraintlayout"]
 }
