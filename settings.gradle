@@ -27,3 +27,5 @@ include ':asmdemo'
 include ':pluginapkdemo'
 include ':plugin_apk_demo'
 include ':iocdemo'
+include ':butterknifedemo'
+

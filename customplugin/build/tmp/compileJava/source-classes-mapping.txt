@@ -1,2 +1,0 @@
-com/xiongtao/customplugin/MyPlugin3.java
- com.xiongtao.customplugin.MyPlugin3
